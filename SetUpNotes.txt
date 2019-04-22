@@ -1,0 +1,26 @@
+MusicFile set:
+
+There are 2 data bases for this code: MySQL and Oracle.
+
+MySQL db = mux
+user = mux
+password =  mux
+package = mux
+
+Main class MusicFile.class
+
+
+Oracle db = muxo
+user = muxo
+password =  muxo
+package = muxo
+
+Main class MusicFileOra.class
+
+
+Class path:
+C:\batch>echo %CLASSPATH%
+.;E:\J_Classes\MusicFile;C:\dump;C:\dump\eg;C:\Fitness\fit.jar;C:\Program Files\Java\junit4.3.1\junit-4.3.1.jar;\Program Files\Ja
+va\junit4.3.1;C:\Classes\MySQL_Connector\mysql-connector-java-5.0.6\mysql-connector-java-5.0.6-bin.jar;C:\Classes;C:\Classes\J_Cl
+asses;C:\Classes\J_Classes\mux;C:\Classes\J_Classes\Muxo;C:\fitnesse20050731\fitnesse\fitnesse.jar;C:\eclipse-SDK-3.2.2-win32\ecl
+ipse\startup.jar;C:\Program Files\Java\jre1.6.0_01\lib\ext\QTJava.zip
