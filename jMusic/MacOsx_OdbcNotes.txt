@@ -1,0 +1,67 @@
+Links:
+https://dev.mysql.com/downloads/connector/odbc/
+https://dev.mysql.com/doc/connector-odbc/en/connector-odbc-installation-binary-osx.html#connector-odbc-osx-iodbc
+
+1) Mac OS X
+
+	On macOS, the ODBC Administrator, based on the iODBC manager, provides easy administration of 
+	ODBC drivers and configuration, allowing the updates of the underlying iODBC configuration files through 
+	a GUI tool. The tool is included in macOS v10.5 and earlier; users of later versions of macOS need to 
+	download it from http://www.iodbc.org/dataspace/doc/iodbc/wiki/iodbcWiki/Downloads and install it manually.
+
+	This package contains iODBC as a Framework plus the GUI iODBC Administrator.app, and includes full 64-bit 
+	support at all levels, as required by Microsoft Office 2016 (v15.25+) and various other newer tools.
+
+	mxkozzzz.dmg
+  	downlaod and install http://www.iodbc.org/dataspace/doc/iodbc/wiki/iodbcWiki/Downloads#Mac%20OS%20X
+  	
+ 2) Download and install 
+ 	https://dev.mysql.com/downloads/connector/odbc/
+ 	
+https://www.simba.com/products/SEN/doc/development_guides/sql/content/testingandtroubleshooting/testingonlinuxunixmacosx.htm
+ 	
+ To Test Your Custom ODBC Driver with iODBCTest or iODBCTestW:
+Use the following command to run iodbctest or iodbctestw:
+./iodbctest
+Or, ./iodbctestw
+Note:
+There are 32-bit and 64-bit installations of the iODBC driver manager available. If you have only one version of the driver manager installed, 
+you will have the appropriate version of iodbctest (or iodbctestw). However, if you have both 32-bit and 64-bit versions installed,
+you will need to ensure that you are running the version from the correct installation directory.
+The program will ask you to enter an ODBC connect string. Type ? if you do not remember the name of your DSN. Your ODBC connect string has the following format:
+DSN=<your_DSN_name>;UID=<user_id> (if applicable);PWD=<your password> (if applicable)
+If you have successfully connected, the prompt SQL> appears.
+Test out some simple SELECT queries to see if your data is being retrieved properly from your data source.
+
+
+Test Code:  https://www.daniweb.com/programming/software-development/threads/233614/connecting-to-mysql-with-java-on-a-mac
+
+This code worked:
+
+package jMusic;
+
+	import java.sql.Connection;
+	import java.sql.DriverManager;
+	import java.sql.SQLException;
+	public class JdbcSelectTest {   // Save as "JdbcSelectTest.java"
+
+	public static void main(String args[]) throws Exception
+	  {
+	    Connection con = null;
+	    try {
+	      Class.forName("com.mysql.jdbc.Driver").newInstance();
+	      con = DriverManager.getConnection("jdbc:mysql:///JavaMusic",
+	        "rduval", "blu4jazz");
+	      if(!con.isClosed())
+	        System.out.println("Successfully connected to " +
+	          "MySQL server using TCP/IP...");
+	    } catch(Exception e) {
+	      System.err.println("Exception: " + e.getMessage());
+	    } finally {
+	      try {
+	        if(con != null)
+	          con.close();
+	      } catch(SQLException e) {}
+	    }
+	  }
+	}
